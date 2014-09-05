@@ -9,4 +9,4 @@ run:
 	docker run --tty --interactive "$(DOCKER_IMAGE)" && (CID=$$(docker ps -lq); [ $$(docker wait $$CID) -eq 0 ] && docker rm $$CID || echo keeping container $$CID for inspection)
 
 shell:
-	docker run --rm --tty --interactive "$(DOCKER_IMAGE)" -l
+	docker run --rm --tty --interactive --entrypoint /bin/bash "$(DOCKER_IMAGE)" -l
