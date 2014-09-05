@@ -14,7 +14,7 @@ Running the tests
 Running the docker container will update the Flexget code against the `develop` branch and
 run the test suite.
 
-    docker run tomdesinto/flexget_test
+    docker run tomdesinto/flexget-test
 
 This will run `nosetest --attr !online`
 
@@ -22,19 +22,19 @@ This will run `nosetest --attr !online`
 If you want to pass additional command line parameters to `nosetest`, add them to the docker run command.
 Let say you want to run the tests in parallel over 4 processes, then run the container with:
 
-    docker run tomdesinto/flexget_test --processes=4
+    docker run tomdesinto/flexget-test --processes=4
 
 
 To get the list of parameters you can pass, just run the container with the `--help` parameter:
 
-    docker run --rm tomdesinto/flexget_test --help
+    docker run --rm tomdesinto/flexget-test --help
 
 
 
 Building the docker image
 -------------------------
 
-    docker build -t tomdesinto/flexget_test https://github.com/thomasleveil/docker-flexget_test.git
+    docker build -t tomdesinto/flexget-test https://github.com/thomasleveil/docker-flexget_test.git
 
 If you want to hack the Dockerfile, then checkout the project and call `make build`
 
@@ -51,6 +51,6 @@ Tips
 Run the container with the `--tty --interactive` (or `-it`) parameters to be able to interrupt the test suite
 with Ctrl-C:
 
-    docker run -it tomdesinto/flexget_test
+    docker run -it tomdesinto/flexget-test
 
 
