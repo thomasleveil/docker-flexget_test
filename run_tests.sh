@@ -1,8 +1,21 @@
 #!/bin/bash
+set -e
+pip freeze
+
+cat <<EOF
+
+
+============== updating Flexget =================
+EOF
 cd /Flexget
 git checkout develop
 git reset --hard HEAD
-source bin/activate
-pip freeze
-nosetests --attr='!online' $*
+
+cat <<EOF
+
+
+================ running tests ===================
+EOF
+echo "nosetests $*"
+nosetests $*
 

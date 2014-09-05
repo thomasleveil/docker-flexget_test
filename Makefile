@@ -1,6 +1,6 @@
 .PHONY: build shell run
 
-DOCKER_IMAGE := tomdesinto/flexget_tests
+DOCKER_IMAGE := tomdesinto/flexget_test
 
 build:
 	docker build --force-rm --tag "$(DOCKER_IMAGE)" .
