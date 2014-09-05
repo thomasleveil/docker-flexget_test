@@ -8,6 +8,7 @@ RUN pip install -r jenkins-requirements.txt
 RUN pip install .
 
 ADD run_tests.sh /
+RUN chmod +x /run_tests.sh
 ENTRYPOINT ["/run_tests.sh"]
 CMD ["--attr", "!online"]
 
